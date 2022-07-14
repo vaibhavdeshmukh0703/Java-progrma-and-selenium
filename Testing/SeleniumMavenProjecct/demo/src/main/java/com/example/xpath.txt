@@ -1,0 +1,109 @@
+for link <a href="hggh">Inforamation</a>
+//a[text()='Information'];
+//a[cointainse(text(),'information')]
+=-----------------------------------------------------------------------------
+if have <a tag><span>Absolute Beginner</span></a> then find xpath like this.
+By.xpath("//span[text()='Absolute Beginner (Part 1) Java 4 Selenium WebDriver: Come Learn How To Program For Automation Testing']")
+by.Xpath("//span[cointainse(text(),Absolute Beginner (Part 1) Java 4 S)]")
+
+------------------------------------------------------------------------------
+
+Basic XPath
+
+Basic XPath expression select nodes or list of nodes on the basis of attribute like ID, Name, Classname, etc from XML document.
+
+For example:
+
+XPath = //input[@name = 'user-message']
+
+Where,
+           input ➡ tagname
+           name ➡ attribute
+           user-message ➡ value of attribute.
+
+------------------------------------------------------------------------------------
+ XPath Contains
+
+Contains() is a method which is used to find the value of those attribute which changes dynamically. For example, login information.
+
+Contains() method has the following general form which is given below:
+
+Syntax:
+          XPath: //tagname[contains(@attribute, 'value')]
+
+------------------------------------------------------------------------------------    
+
+XPath Starts-with
+
+starts-with() is a method that finds those elements whose attribute value changes on refresh on the web page. This method checks the starting text of an attribute and finds elements whose attribute changes dynamically.
+
+We can also use this method to find elements whose attribute value is static (not changing). The general syntax for starts-with() method is given below:
+
+
+------------------------------------------------------------------------------------
+XPath Ends-with
+ends-with() method checks the ending text of an attribute and finds elements whose attribute changes dynamically on refresh. It has the following syntax as follows:
+
+Syntax:
+        XPath: //tagname[ends-with(@attribute, 'value')]
+
+ ---------------------------------------------------------------------------------------------------
+ Using “OR” Statement
+In OR expression, two conditions are used and anyone condition either 1st condition or 2nd condition should be true to find element. It has the following general form.
+
+Syntax:
+         XPath: //tagname[XPath statement-1 or XPath statement-2]
+For example, we will find the XPath of login button on the Facebook page.
+
+XPath(login button): //input[@value = 'Log In' or @type = 'submit']
+
+------------------------------------------------------------------------------------------------
+
+Using “AND” Statement
+In AND expression, two conditions are used and both conditions must be true to find element. If anyone’s condition is false then XPath will be failed to find the element. It has the following general form.
+
+Syntax:
+XPath: //tagname[XPath statement-1 and XPath statement-2]
+For example, we will find the XPath of sign up button on the Facebook page.
+
+XPath(Sign Up button): //button[@type = 'submit' and @id = 'u_0_19'] (1 of 1 matched).
+
+-----------------------------------------------------------------------------------------------
+XPath Text
+The text() method is used to find elements with an exact match. The syntax for the text() method is given below:
+
+Syntax:
+XPath: //tagname[text() = 'text_value']
+For example, we will create XPath of text “Create a new account” on the Facebook page using text() method.
+
+XPath(Create a new account): //div[text() = 'Create a new account'] where div is tagname.
+Similarly,
+XPath(Recent logins): //div[text() = 'Recent logins']
+-------------------------------------------------------------------------------------------
+
+Hrd assertvow to Create XPath of Link in Selenium?
+We can easily determine XPath of any link in Selenium using text() method. For example, open the Google home page www.google.com.
+
+In this webpage, we will create XPath of Gmail link. When you will inspect it, you will see like this in the below screenshot:
+
+How to Create XPath of Links in Selenium
+Here, Gmail is text. So, let’s find XPath for this link.
+
+XPath(Gmail): //a[text() = 'Gmail']
+We can also write the same XPath using contains() method like this:
+
+XPath(Gmail): //a[contains(text(), 'Gmail')] (1 of 1 matched)
+
+Similarly, 
+     XPath(Images): //a[contains(text(), 'Images')] (1 of 1 matched)
+--------------------------------------------------------------------------------------------------
+
+Hard Assert---->Assert
+it will stop execution current testcase and start second tet case to starting
+when condition not matches, then test case marked as failed.
+
+Soft Assertion--->verify
+when condition not matches it will not stopping exicution of current test cases.and next line getting exicted.
+aat the end soft assert decide test case pass or fail.
+
+difference between 

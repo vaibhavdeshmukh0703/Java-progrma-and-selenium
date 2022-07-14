@@ -1,0 +1,62 @@
+principle of manual testing?
+Ans : 1.Bug free, defect clustring, pesticide paradox, it should be context dependand.
+
+What  is investment Banking?
+it is fanacial entity, suggest indivisual and companys gov sector firm etc.
+how to rais there fanacial capital by participeting in market activity.
+main role is Ib they act as midiater between company and invester.
+REserch
+merger
+acquagetion
+
+
+what is butic in IB?
+small IB firm which help company.
+
+sequrity?
+stock, bonds, deventual.
+
+capital of com is diveded into equal unit is called Equity.
+
+capital market?
+capital market are fanancial market to buy and sell a sequrity.
+
+types of capital market?
+1.  Primary market.(IPO intial public offering)
+2. secondry market.()
+
+SEBI (sequrity exchange board of india) 
+
+trading---> buying and selling share to gain profite.
+
+comudity ---> Agricultutr and non agriculture
+
+currancy market --> 
+intra day --> one day trading same day buy and sell.
+Long day Dilivery tradde --> for long term
+position trade--> one  year
+
+FOK(Fill OR Kill) --> if i want 100 share if available 100then fill. if avilable 99 then kill.
+IOC(Immediate or cancle) ---> if i want 100 share if avilable 90 only then exicute, rest all cancle.  
+AMC(After Market order) --->  
+
+Bo(Bracket order)---> if margin provided is nothing but intra day tradding.(target--toploss)
+co(Cover Trading)---> you can only set toploss. you have to check current price then decide to sell or not.
+issue price---> price of company share at which avialable first time in market.
+market capitalisation --> the fnalcial value of company is calculated by multiplying no of share price with number of share is known as market capitalisation. 
+Bid Price --> bid price rate at which buyer ready to buy  the stock.
+offer price  -> Ask price... ---> a price which seller want to sell the stock.
+Net asset value --> is fund in current market value of asset.
+face value of he share---> the amout or value allocated to share by the company.
+BSC - bombay stock exchange
+NSC - National stock exchange.
+
+bsc --- index sensex.
+NSC  ----- index Nifty.
+
+Bonds---->  
+the comudity market invalve in buying sell or trading a row producct and natural resources.
+
+mutual fund---> an entity that collect money from invester and invest in diff sector. 
+
+deventures--->  
