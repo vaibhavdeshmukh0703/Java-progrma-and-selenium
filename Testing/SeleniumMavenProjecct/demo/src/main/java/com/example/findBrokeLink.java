@@ -22,7 +22,7 @@ public class findBrokeLink {
 			ChromeOptions co = new ChromeOptions();
 			co.addArguments("--headless");
 
-			driver = new ChromeDriver(co);
+			driver = new ChromeDriver();
 
 			//driver.get("https://www.zilti.com");
          driver.get("http://www.amazon.in");
@@ -49,13 +49,13 @@ public class findBrokeLink {
        else{
           String url = webElement.getAttribute("href");
          huc = (HttpURLConnection)(new URL(webElement.getAttribute("href")).openConnection());
-         huc.connect();;
+         huc.connect();
          int responceCode = huc.getResponseCode();
          if(responceCode>=400){
             System.out.println(url+"---->"+huc.getResponseMessage()+"is a broken Link");
          }
          else{
-            System.out.println(url+"-------->"+huc.getResponseMessage());
+            System.out.println("from ElseCode"+url+"-------->"+huc.getResponseMessage());
          }
        }
     }
