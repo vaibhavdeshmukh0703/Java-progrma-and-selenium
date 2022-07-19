@@ -43,7 +43,7 @@ public class Rightclick_Or_ContextClick {
             Alert alert = driver.switchTo().alert();
 
             String text = alert.getText();
-            System.out.println("Text from alert ->"+text);
+          //  System.out.println("Text from alert ->"+text);
 
             alert.accept();
 
