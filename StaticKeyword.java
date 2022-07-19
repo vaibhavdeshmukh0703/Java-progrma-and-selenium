@@ -1,4 +1,7 @@
 public class StaticKeyword {
+    StaticKeyword(){
+        
+    }
      String by;
     static{
         System.out.println("from static block");
@@ -23,7 +26,7 @@ public class StaticKeyword {
     System.out.println(fname == fname3); //true
     System.out.println(fname == fname1);//false
     System.out.println(fname1==fname2); // false
-    System.out.println(fname.equals(fname2));//true
+    System.out.println(fname.equals(fname2));//true  
 
     System.out.println("vaibhav"+ 10*20);
     System.out.println(10*20+"vaibhav");
