@@ -48,9 +48,9 @@ public class Click_and_hold_release {
             System.out.println(getX_Button_A+" ---- "+getY_Button_A);
             System.out.println(getX_ButtonC+"------"+getY_ButtonC);
             Actions actions =  new Actions(driver);
-            actions.clickAndHold(Button_A).moveByOffset(218,0).perform();
+           // actions.clickAndHold(Button_A).moveByOffset(218,0).perform();
           //  actions.clickAndHold(Button_A).moveByOffset(getX+1,getY+1).perform();
-
+          //  actions.dragAndDrop(Button_A, Button_C).build().perform();
             //actions.moveToElement(Button_C).release().perform();
 
 
