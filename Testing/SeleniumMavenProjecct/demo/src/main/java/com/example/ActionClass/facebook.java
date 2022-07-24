@@ -1,5 +1,6 @@
 package com.example.ActionClass;
-
+ import java.io.FileInputStream;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -7,15 +8,28 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Action;
-import org.openqa.selenium.interactions.Actions;
-
+import org.openqa.selenium.interactions.Actions; 
 public class facebook {
     private static WebDriver driver = null;
-
+    private static Properties props = null;
+    static{
+      props = new Properties();
+      try {
+        String filePath = "./confige.properties";
+        FileInputStream fis = new FileInputStream(filePath);
+        props.load(fis);
+        
+      } catch (Exception e) {
+        //TODO: handle exception
+        System.out.println(e.getMessage());
+      }
+    }
     public static void initialSetUp() {
+        String filePath = "";
         try {
-            System.setProperty("webdriver.chrome.driver",
-                    "/home/vaibhav/chrome_driver/chromedriver_linux64/chromedriver");
+           
+            System.setProperty(props.getProperty("chromeDriver"),
+                   props.getProperty("chromeDriverLocationUrl"));
             driver = new ChromeDriver();
             driver.get("https://facebook.com");
             driver.manage().window().maximize();
@@ -23,7 +37,7 @@ public class facebook {
             String PageTitle = driver.getTitle();
             System.out.println(PageTitle);
 
-            TestCase();
+           TestCase();
         } catch (Exception e) {
             // TODO: handle exception
             System.out.println(e.getMessage());
@@ -37,9 +51,8 @@ public class facebook {
         }
     }
 
-    public static void TestCase() {
-        String emailId = "vaibhavdeshmukh0703@gmail.com";
-        String password = "";
+    public static void TestCase() throws InterruptedException {
+      
 
         WebElement facebook_emaiWebElement = driver.findElement(By.id("email"));
         WebElement facebook_passwordWebElement = driver.findElement(By.id("pass"));
@@ -47,24 +60,17 @@ public class facebook {
 
         Actions actions = new Actions(driver);
 
-        // Action emainAction = actions.moveToElement(facebook_emaiWebElement)
-        // .click()
-        // .keyDown(facebook_emaiWebElement, Keys.SHIFT)
-        // .sendKeys("vaibhav")
-        // .keyUp(facebook_emaiWebElement,Keys.SHIFT)
-        // .doubleClick(facebook_emaiWebElement)
-        // .contextClick()
-        // .build();
+        
 
         Action facebook_emailWebElementAction = actions.moveToElement(facebook_emaiWebElement)
                 .click()
-                .sendKeys(emailId)
+                .sendKeys(props.getProperty("emailId"))
                 .build();
         facebook_emailWebElementAction.perform();
 
         Action facebook_passwordWebElementAction = actions.moveToElement(facebook_passwordWebElement)
                 .click()
-                .sendKeys(password)
+                .sendKeys(props.getProperty("password"))
                 .build();
         facebook_passwordWebElementAction.perform();
 
@@ -72,6 +78,7 @@ public class facebook {
                 .click()
                 .build();
         facebook_submitButtonAction.perform();
+        Thread.sleep(10000);
 
     }
 
