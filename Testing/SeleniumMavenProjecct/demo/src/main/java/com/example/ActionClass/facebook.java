@@ -8,13 +8,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Action;
-import org.openqa.selenium.interactions.Actions; 
+import org.openqa.selenium.interactions.Actions;
+import io.github.cdimascio.dotenv.Dotenv;
+import io.github.cdimascio.dotenv.DotenvException; 
 public class facebook {
     private static WebDriver driver = null;
     private static Properties props = null;
     static{
       props = new Properties();
       try {
+       
         String filePath = "./confige.properties";
         FileInputStream fis = new FileInputStream(filePath);
         props.load(fis);
@@ -34,7 +37,7 @@ public class facebook {
             driver.get("https://facebook.com");
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-            String PageTitle = driver.getTitle();
+            String PageTitle = driver.getTitle();   
             System.out.println(PageTitle);
 
            TestCase();
