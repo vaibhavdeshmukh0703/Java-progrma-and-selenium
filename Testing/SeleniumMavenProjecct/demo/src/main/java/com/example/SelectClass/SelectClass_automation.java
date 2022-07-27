@@ -1,13 +1,11 @@
-package com.example;
+package com.example.SelectClass;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebDriverInfo;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.WebDriver.Options;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
