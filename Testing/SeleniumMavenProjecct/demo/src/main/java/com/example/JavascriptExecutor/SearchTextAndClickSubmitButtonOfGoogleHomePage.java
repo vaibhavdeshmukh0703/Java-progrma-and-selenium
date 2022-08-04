@@ -10,6 +10,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class SearchTextAndClickSubmitButtonOfGoogleHomePage {
 
     public static Properties p = null;
@@ -31,7 +33,8 @@ public class SearchTextAndClickSubmitButtonOfGoogleHomePage {
     public static void initialSetUp() {
 
         try {
-            System.setProperty(p.getProperty("chromeDriver"), p.getProperty("chromeDriverLocationUrl"));
+            //System.setProperty(p.getProperty("chromeDriver"), p.getProperty("chromeDriverLocationUrl"));
+            WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
             driver.get("http://www.google.com");
             String title = driver.getTitle();
@@ -43,9 +46,9 @@ public class SearchTextAndClickSubmitButtonOfGoogleHomePage {
             // TODO: handle exception
             System.out.println(e.getMessage());
         } 
-        // finally {
-        //     driver.close();
-        // }
+        finally {
+            driver.close();
+        }
     }
 
     public static void testCase() {

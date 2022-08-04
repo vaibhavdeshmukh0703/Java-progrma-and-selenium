@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import com.example.JavascriptExecutor.UtilsMethod;
 
 /**
  * RetrunTitleOfGoogleHomePage
@@ -39,7 +40,10 @@ public class RetrunTitleOfGoogleHomePage {
             System.out.println("Page Tile is -->" + title);
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-            testCase();
+
+            String Title = UtilsMethod.getPageTilte(driver);
+            System.out.println(Title);
+            //testCase();
         } catch (Exception e) {
             // TODO: handle exception
             System.out.println(e.getMessage());
@@ -52,6 +56,7 @@ public class RetrunTitleOfGoogleHomePage {
         try {
 
             JavascriptExecutor js = (JavascriptExecutor) driver;
+          //  JavascriptExecutor js1 = driver;
             String script = "return document.title";
             String Title = (String) js.executeScript(script);
             System.out.println("Page Title is -->" + Title);

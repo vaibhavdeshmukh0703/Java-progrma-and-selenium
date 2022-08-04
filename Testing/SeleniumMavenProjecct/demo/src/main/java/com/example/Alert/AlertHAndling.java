@@ -1,5 +1,6 @@
 package com.example.Alert;
 import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,30 +10,34 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class AlertHAndling {
 	private static WebDriver driver = null;
 
 	public static void initialSetup() {
 		try {
-			System.setProperty("webdriver.chrome.driver",
-					"/home/vaibhav/chrome_driver/chromedriver_linux64/chromedriver");
+			WebDriverManager.chromedriver().setup();
 
 			ChromeOptions co = new ChromeOptions();
 			co.addArguments("--headless");
 
-			driver = new ChromeDriver(co);
+			driver = new ChromeDriver();
 
 			driver.get("https://selenium08.blogspot.com/2019/07/alert-test.html");
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
-			// handleSimpleAlert();
+			 handleSimpleAlert();
 			// handleConfirmationAlert();
-			handlePromptAlertBox();
+			//handlePromptAlertBox();
 
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.out.println(e.getMessage());
+		}
+		finally{
+			driver.quit();
 		}
 	}
 
@@ -57,7 +62,7 @@ public class AlertHAndling {
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
-			driver.quit();
+			//driver.quit();
 		}
 
 	}
@@ -75,7 +80,7 @@ public class AlertHAndling {
 			String getText = alert.getText();
 
 			if (getText.equalsIgnoreCase("This is a confirm alert. Do you want to accept or cancel?")) {
-				// alert.sendKeys("Welcome");
+				 alert.sendKeys("Welcome");
 				alert.accept();
 				System.out.println("alert Cofirmation accepted");
 			} else {
@@ -101,16 +106,19 @@ public class AlertHAndling {
 
 			String getText = alert.getText();
 			if (getText.equalsIgnoreCase("Hello! I am a simple alert box!")) {
+				Thread.sleep(2000);
+				alert.accept();
 				System.out.println("Its correct masseage");
 			} else {
 				System.out.println("Something Wrong!!! ----> original msg" + getText);
 			}
-			alert.accept();
-			driver.close();
+			
+			
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.out.println(e.getMessage());
 		}
+		
 	}
 
 	public static void main(String[] args) {
