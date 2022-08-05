@@ -58,6 +58,10 @@ public class DrawBorder {
 
             // flash page
             WebElement element = driver.findElement(By.xpath("//a[text()='Home']"));
+            if(element.isDisplayed() || element.isSelected() || element.isEnabled()){
+                
+                System.out.println("Element is displayed");
+            }
             UtilsMethod.changeColor("#000000", driver,element);
         } catch (Exception e) {
             // TODO: handle exception

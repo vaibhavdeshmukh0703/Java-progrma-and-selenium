@@ -26,45 +26,50 @@ public class SelectClass_automation {
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-            selectDropDownOptions();
+            WebElement selectbox = driver.findElement(By.xpath("//select[@name='cars']"));
+            String[] forSelectOption = { "Volvo", "Audi" };
+            selectDropDownOptions(selectbox, forSelectOption);
         } catch (Exception e) {
             System.out.println(e.getMessage());
-        }
-        finally{
+        } finally {
             driver.quit();
         }
 
     }
 
-    public static void selectDropDownOptions() {
-        WebElement selectbox = driver.findElement(By.xpath("//select[@name='cars']"));
-        Select select = new Select(selectbox);
-               
-        if(selectbox.isDisplayed() && selectbox.isEnabled()){
-            if (select.isMultiple()) {             
-                List<WebElement> selectedValues = select.getOptions();
-                for (WebElement element : selectedValues) {
-                   if(element.getText().contains("Volvo") || element.getText().contains("Audi"))
-                   {
-                    select.selectByVisibleText("Volvo");
-                    select.selectByVisibleText("Audi");
-                    break;
-                   }
-                }
+    public static void selectDropDownOptions(WebElement SelectBox, String[] values) {
+
+        Select select = new Select(SelectBox);
+
+        if (SelectBox.isDisplayed() && SelectBox.isEnabled()) {
+            if (select.isMultiple()) {
+                selectOption(select, values);
+            }else{
+                selectOption(select, values);
             }
         }
-        
-        List<WebElement>list = select.getAllSelectedOptions();
+
+        List<WebElement> list = select.getAllSelectedOptions();
         for (WebElement webElement : list) {
             System.out.println(webElement.getText());
         }
 
     }
 
-    public static void main(String[] args) {
-        browserInitialSetup();
-       
+    private static void selectOption(Select select, String[] values) {
+        List<WebElement> selectedValues = select.getOptions();
+                for (WebElement element : selectedValues) {
+                    for (String option : values) {
+                        if (element.getText().equals(option)) {
+                            select.selectByVisibleText(option);
+                            break;
+                        }
+                    }
 
+                }
     }
 
+    public static void main(String[] args) {
+        browserInitialSetup();
+    }
 }
