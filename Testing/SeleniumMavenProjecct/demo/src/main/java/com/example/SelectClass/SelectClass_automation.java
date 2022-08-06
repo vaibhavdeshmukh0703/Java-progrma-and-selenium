@@ -27,8 +27,7 @@ public class SelectClass_automation {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
             WebElement selectbox = driver.findElement(By.xpath("//select[@name='cars']"));
-            String[] forSelectOption = { "Volvo", "Audi" };
-            selectDropDownOptions(selectbox, forSelectOption);
+            selectDropDownOptions(selectbox, "Volvo", "Audi");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         } finally {
@@ -37,14 +36,14 @@ public class SelectClass_automation {
 
     }
 
-    public static void selectDropDownOptions(WebElement SelectBox, String[] values) {
+    public static void selectDropDownOptions(WebElement SelectBox, String... values) {
 
         Select select = new Select(SelectBox);
 
         if (SelectBox.isDisplayed() && SelectBox.isEnabled()) {
             if (select.isMultiple()) {
                 selectOption(select, values);
-            }else{
+            } else {
                 selectOption(select, values);
             }
         }
@@ -58,15 +57,15 @@ public class SelectClass_automation {
 
     private static void selectOption(Select select, String[] values) {
         List<WebElement> selectedValues = select.getOptions();
-                for (WebElement element : selectedValues) {
-                    for (String option : values) {
-                        if (element.getText().equals(option)) {
-                            select.selectByVisibleText(option);
-                            break;
-                        }
-                    }
-
+        for (WebElement element : selectedValues) {
+            for (String option : values) {
+                if (element.getText().equals(option)) {
+                    select.selectByVisibleText(option);
+                    break;
                 }
+            }
+
+        }
     }
 
     public static void main(String[] args) {

@@ -8,9 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Action;
-import org.openqa.selenium.interactions.Actions;
-import io.github.cdimascio.dotenv.Dotenv;
-import io.github.cdimascio.dotenv.DotenvException; 
+import org.openqa.selenium.interactions.Actions; 
 public class facebook {
     private static WebDriver driver = null;
     private static Properties props = null;
@@ -81,7 +79,7 @@ public class facebook {
                 .click()
                 .build();
         facebook_submitButtonAction.perform();
-        Thread.sleep(10000);
+    
 
     }
 
