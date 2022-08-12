@@ -26,10 +26,10 @@ public class selectGoogleResultDynamicaly {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
             driver.findElement(By.name("q")).sendKeys("java");
-         
+
             List<WebElement> serchSugession = driver
-                    .findElements(By.xpath("//ul[@role='listbox']//descendant::li//descendant::div[@class='wM6W7d']"));
-          
+                    .findElements(By.xpath("div[@class='wM6W7d']"));
+            Thread.sleep(2000);
             for (WebElement element : serchSugession) {
                 // System.out.println(element.getText());
                 if (element.getText().contains("javascript")) {

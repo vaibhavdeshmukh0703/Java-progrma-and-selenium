@@ -31,9 +31,11 @@ public class check_redio_buuton_is_selected {
             }
 
 
-        } catch (Exception e) {
-            //TODO: handle exception
-            System.out.println(e.getMessage());
-        }
+        }catch(
+
+    Exception e)
+    {
+        // TODO: handle exception
+        System.out.println(e.getMessage());
     }
-}
+}}
