@@ -5,23 +5,25 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class MouseOver {
     private static WebDriver driver = null;
     public static void initialSetup() {
 		try {
-			System.setProperty("webdriver.chrome.driver",
-					"/home/vaibhav/chrome_driver/chromedriver_linux64/chromedriver");
+			// System.setProperty("webdriver.chrome.driver",
+			// 		"/home/vaibhav/chrome_driver/chromedriver_linux64/chromedriver");
 
 			// ChromeOptions co = new ChromeOptions();
 			// co.addArguments("--headless");
-
-			driver = new ChromeDriver();
+			WebDriverManager.firefoxdriver().setup();
+			driver = new FirefoxDriver();
 
 			//driver.get("https://www.zilti.com");
          driver.get("http://www.amazon.in");
@@ -48,7 +50,7 @@ public class MouseOver {
 
 		WebElement yourOrders = driver.findElement(By.xpath("//a//span[text()='Your Orders']"));
 		Action yourOrdersElementClick =
-		 action.click(yourOrders).build();
+		 action.moveToElement(yourOrders).click().build();
 		yourOrdersElementClick.perform();
 
 

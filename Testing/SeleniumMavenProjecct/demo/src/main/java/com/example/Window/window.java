@@ -23,11 +23,10 @@ public class window {
             WebElement DemoSiteElement = driver.findElement(By.id("tabButton"));
             DemoSiteElement.click();
 
-            Set<String> windowId= driver.getWindowHandles();
+            Set<String> windowId = driver.getWindowHandles();
             for (String ids : windowId) {
-                System.out.println("Windows Id is --->"+ids);
+                System.out.println("Windows Id is --->" + ids);
             }
-           
 
         } catch (Exception e) {
             // TODO: handle exception
