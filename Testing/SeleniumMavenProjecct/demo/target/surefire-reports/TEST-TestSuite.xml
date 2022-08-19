@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="156.469" tests="1" errors="0" skipped="0" failures="1">
+  <properties>
+    <property name="java.specification.version" value="18"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/vaibhav/Testing/Java program/Testing/SeleniumMavenProjecct/demo/target/test-classes:/home/vaibhav/Testing/Java program/Testing/SeleniumMavenProjecct/demo/target/classes:/home/vaibhav/.m2/repository/io/github/bonigarcia/webdrivermanager/5.1.1/webdrivermanager-5.1.1.jar:/home/vaibhav/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:/home/vaibhav/.m2/repository/com/google/code/gson/gson/2.9.0/gson-2.9.0.jar:/home/vaibhav/.m2/repository/com/github/docker-java/docker-java/3.2.13/docker-java-3.2.13.jar:/home/vaibhav/.m2/repository/com/github/docker-java/docker-java-core/3.2.13/docker-java-core-3.2.13.jar:/home/vaibhav/.m2/repository/com/github/docker-java/docker-java-api/3.2.13/docker-java-api-3.2.13.jar:/home/vaibhav/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.10.3/jackson-annotations-2.10.3.jar:/home/vaibhav/.m2/repository/commons-io/commons-io/2.6/commons-io-2.6.jar:/home/vaibhav/.m2/repository/org/apache/commons/commons-compress/1.21/commons-compress-1.21.jar:/home/vaibhav/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.10.3/jackson-databind-2.10.3.jar:/home/vaibhav/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.10.3/jackson-core-2.10.3.jar:/home/vaibhav/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.64/bcpkix-jdk15on-1.64.jar:/home/vaibhav/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.64/bcprov-jdk15on-1.64.jar:/home/vaibhav/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.30/jcl-over-slf4j-1.7.30.jar:/home/vaibhav/.m2/repository/com/github/docker-java/docker-java-transport-httpclient5/3.2.13/docker-java-transport-httpclient5-3.2.13.jar:/home/vaibhav/.m2/repository/com/github/docker-java/docker-java-transport/3.2.13/docker-java-transport-3.2.13.jar:/home/vaibhav/.m2/repository/net/java/dev/jna/jna/5.8.0/jna-5.8.0.jar:/home/vaibhav/.m2/repository/org/brotli/dec/0.1.2/dec-0.1.2.jar:/home/vaibhav/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar:/home/vaibhav/.m2/repository/org/apache/httpcomponents/client5/httpclient5/5.1.3/httpclient5-5.1.3.jar:/home/vaibhav/.m2/repository/org/apache/httpcomponents/core5/httpcore5/5.1.3/httpcore5-5.1.3.jar:/home/vaibhav/.m2/repository/org/apache/httpcomponents/core5/httpcore5-h2/5.1.3/httpcore5-h2-5.1.3.jar:/home/vaibhav/.m2/repository/commons-codec/commons-codec/1.15/commons-codec-1.15.jar:/home/vaibhav/.m2/repository/io/github/cdimascio/dotenv-java/2.2.4/dotenv-java-2.2.4.jar:/home/vaibhav/.m2/repository/org/seleniumhq/selenium/selenium-java/3.141.59/selenium-java-3.141.59.jar:/home/vaibhav/.m2/repository/org/seleniumhq/selenium/selenium-api/3.141.59/selenium-api-3.141.59.jar:/home/vaibhav/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/3.141.59/selenium-chrome-driver-3.141.59.jar:/home/vaibhav/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/3.141.59/selenium-edge-driver-3.141.59.jar:/home/vaibhav/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/3.141.59/selenium-firefox-driver-3.141.59.jar:/home/vaibhav/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/3.141.59/selenium-ie-driver-3.141.59.jar:/home/vaibhav/.m2/repository/org/seleniumhq/selenium/selenium-opera-driver/3.141.59/selenium-opera-driver-3.141.59.jar:/home/vaibhav/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59.jar:/home/vaibhav/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/3.141.59/selenium-safari-driver-3.141.59.jar:/home/vaibhav/.m2/repository/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59.jar:/home/vaibhav/.m2/repository/net/bytebuddy/byte-buddy/1.8.15/byte-buddy-1.8.15.jar:/home/vaibhav/.m2/repository/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar:/home/vaibhav/.m2/repository/com/google/guava/guava/25.0-jre/guava-25.0-jre.jar:/home/vaibhav/.m2/repository/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar:/home/vaibhav/.m2/repository/org/checkerframework/checker-compat-qual/2.0.0/checker-compat-qual-2.0.0.jar:/home/vaibhav/.m2/repository/com/google/errorprone/error_prone_annotations/2.1.3/error_prone_annotations-2.1.3.jar:/home/vaibhav/.m2/repository/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar:/home/vaibhav/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.jar:/home/vaibhav/.m2/repository/com/squareup/okhttp3/okhttp/3.11.0/okhttp-3.11.0.jar:/home/vaibhav/.m2/repository/com/squareup/okio/okio/1.14.0/okio-1.14.0.jar:/home/vaibhav/.m2/repository/junit/junit/4.13/junit-4.13.jar:/home/vaibhav/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/vaibhav/.m2/repository/org/testng/testng/6.14.3/testng-6.14.3.jar:/home/vaibhav/.m2/repository/com/beust/jcommander/1.72/jcommander-1.72.jar:/home/vaibhav/.m2/repository/org/apache-extras/beanshell/bsh/2.0b6/bsh-2.0b6.jar:"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="18"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="GB"/>
+    <property name="sun.boot.library.path" value="/usr/lib/java/jdk-18_linux-x64_bin/jdk-18.0.1.1/lib"/>
+    <property name="sun.java.command" value="/home/vaibhav/Testing/Java program/Testing/SeleniumMavenProjecct/demo/target/surefire/surefirebooter8663525715510549584.jar /home/vaibhav/Testing/Java program/Testing/SeleniumMavenProjecct/demo/target/surefire 2022-08-18T14-26-32_752-jvmRun1 surefire14626384294913848456tmp surefire_04341001187976988063tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/home/vaibhav/Testing/Java program/Testing/SeleniumMavenProjecct/demo/target/test-classes:/home/vaibhav/Testing/Java program/Testing/SeleniumMavenProjecct/demo/target/classes:/home/vaibhav/.m2/repository/io/github/bonigarcia/webdrivermanager/5.1.1/webdrivermanager-5.1.1.jar:/home/vaibhav/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:/home/vaibhav/.m2/repository/com/google/code/gson/gson/2.9.0/gson-2.9.0.jar:/home/vaibhav/.m2/repository/com/github/docker-java/docker-java/3.2.13/docker-java-3.2.13.jar:/home/vaibhav/.m2/repository/com/github/docker-java/docker-java-core/3.2.13/docker-java-core-3.2.13.jar:/home/vaibhav/.m2/repository/com/github/docker-java/docker-java-api/3.2.13/docker-java-api-3.2.13.jar:/home/vaibhav/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.10.3/jackson-annotations-2.10.3.jar:/home/vaibhav/.m2/repository/commons-io/commons-io/2.6/commons-io-2.6.jar:/home/vaibhav/.m2/repository/org/apache/commons/commons-compress/1.21/commons-compress-1.21.jar:/home/vaibhav/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.10.3/jackson-databind-2.10.3.jar:/home/vaibhav/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.10.3/jackson-core-2.10.3.jar:/home/vaibhav/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.64/bcpkix-jdk15on-1.64.jar:/home/vaibhav/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.64/bcprov-jdk15on-1.64.jar:/home/vaibhav/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.30/jcl-over-slf4j-1.7.30.jar:/home/vaibhav/.m2/repository/com/github/docker-java/docker-java-transport-httpclient5/3.2.13/docker-java-transport-httpclient5-3.2.13.jar:/home/vaibhav/.m2/repository/com/github/docker-java/docker-java-transport/3.2.13/docker-java-transport-3.2.13.jar:/home/vaibhav/.m2/repository/net/java/dev/jna/jna/5.8.0/jna-5.8.0.jar:/home/vaibhav/.m2/repository/org/brotli/dec/0.1.2/dec-0.1.2.jar:/home/vaibhav/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar:/home/vaibhav/.m2/repository/org/apache/httpcomponents/client5/httpclient5/5.1.3/httpclient5-5.1.3.jar:/home/vaibhav/.m2/repository/org/apache/httpcomponents/core5/httpcore5/5.1.3/httpcore5-5.1.3.jar:/home/vaibhav/.m2/repository/org/apache/httpcomponents/core5/httpcore5-h2/5.1.3/httpcore5-h2-5.1.3.jar:/home/vaibhav/.m2/repository/commons-codec/commons-codec/1.15/commons-codec-1.15.jar:/home/vaibhav/.m2/repository/io/github/cdimascio/dotenv-java/2.2.4/dotenv-java-2.2.4.jar:/home/vaibhav/.m2/repository/org/seleniumhq/selenium/selenium-java/3.141.59/selenium-java-3.141.59.jar:/home/vaibhav/.m2/repository/org/seleniumhq/selenium/selenium-api/3.141.59/selenium-api-3.141.59.jar:/home/vaibhav/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/3.141.59/selenium-chrome-driver-3.141.59.jar:/home/vaibhav/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/3.141.59/selenium-edge-driver-3.141.59.jar:/home/vaibhav/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/3.141.59/selenium-firefox-driver-3.141.59.jar:/home/vaibhav/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/3.141.59/selenium-ie-driver-3.141.59.jar:/home/vaibhav/.m2/repository/org/seleniumhq/selenium/selenium-opera-driver/3.141.59/selenium-opera-driver-3.141.59.jar:/home/vaibhav/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59.jar:/home/vaibhav/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/3.141.59/selenium-safari-driver-3.141.59.jar:/home/vaibhav/.m2/repository/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59.jar:/home/vaibhav/.m2/repository/net/bytebuddy/byte-buddy/1.8.15/byte-buddy-1.8.15.jar:/home/vaibhav/.m2/repository/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar:/home/vaibhav/.m2/repository/com/google/guava/guava/25.0-jre/guava-25.0-jre.jar:/home/vaibhav/.m2/repository/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar:/home/vaibhav/.m2/repository/org/checkerframework/checker-compat-qual/2.0.0/checker-compat-qual-2.0.0.jar:/home/vaibhav/.m2/repository/com/google/errorprone/error_prone_annotations/2.1.3/error_prone_annotations-2.1.3.jar:/home/vaibhav/.m2/repository/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar:/home/vaibhav/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.jar:/home/vaibhav/.m2/repository/com/squareup/okhttp3/okhttp/3.11.0/okhttp-3.11.0.jar:/home/vaibhav/.m2/repository/com/squareup/okio/okio/1.14.0/okio-1.14.0.jar:/home/vaibhav/.m2/repository/junit/junit/4.13/junit-4.13.jar:/home/vaibhav/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/vaibhav/.m2/repository/org/testng/testng/6.14.3/testng-6.14.3.jar:/home/vaibhav/.m2/repository/com/beust/jcommander/1.72/jcommander-1.72.jar:/home/vaibhav/.m2/repository/org/apache-extras/beanshell/bsh/2.0b6/bsh-2.0b6.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/vaibhav"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2022-04-22"/>
+    <property name="java.home" value="/usr/lib/java/jdk-18_linux-x64_bin/jdk-18.0.1.1"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/vaibhav/Testing/Java program/Testing/SeleniumMavenProjecct/demo"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="/home/vaibhav/Testing/Java program/Testing/SeleniumMavenProjecct/demo/target/surefire/surefirebooter8663525715510549584.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="18.0.1.1+2-6"/>
+    <property name="user.name" value="vaibhav"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="5.15.0-46-generic"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="/home/vaibhav/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="18.0.1.1"/>
+    <property name="user.dir" value="/home/vaibhav/Testing/Java program/Testing/SeleniumMavenProjecct/demo"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="18.0.1.1+2-6"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="62.0"/>
+  </properties>
+  <testcase name="homePage" classname="com.example.FirstTest" time="121.438">
+    <failure message="chrome not reachable&#10;Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;&#10;System info: host: &apos;vaibhav-Inspiron-3542&apos;, ip: &apos;127.0.1.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.15.0-46-generic&apos;, java.version: &apos;18.0.1.1&apos;&#10;Driver info: driver.version: ChromeDriver&#10;remote stacktrace: #0 0x5645a6510f33 &lt;unknown&gt;&#10;#1 0x5645a625afaf &lt;unknown&gt;&#10;#2 0x5645a6249209 &lt;unknown&gt;&#10;#3 0x5645a6281a79 &lt;unknown&gt;&#10;#4 0x5645a627d9d0 &lt;unknown&gt;&#10;#5 0x5645a6279d5a &lt;unknown&gt;&#10;#6 0x5645a62b4d3a &lt;unknown&gt;&#10;#7 0x5645a62aee63 &lt;unknown&gt;&#10;#8 0x5645a628482a &lt;unknown&gt;&#10;#9 0x5645a6285985 &lt;unknown&gt;&#10;#10 0x5645a65554cd &lt;unknown&gt;&#10;#11 0x5645a65595ec &lt;unknown&gt;&#10;#12 0x5645a653f71e &lt;unknown&gt;&#10;#13 0x5645a655a238 &lt;unknown&gt;&#10;#14 0x5645a6534870 &lt;unknown&gt;&#10;#15 0x5645a6576608 &lt;unknown&gt;&#10;#16 0x5645a6576788 &lt;unknown&gt;&#10;#17 0x5645a6590f1d &lt;unknown&gt;&#10;#18 0x7fa1c2dc2609 &lt;unknown&gt;&#10;" type="org.openqa.selenium.WebDriverException"><![CDATA[org.openqa.selenium.WebDriverException: 
+chrome not reachable
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'vaibhav-Inspiron-3542', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.15.0-46-generic', java.version: '18.0.1.1'
+Driver info: driver.version: ChromeDriver
+remote stacktrace: #0 0x5645a6510f33 <unknown>
+#1 0x5645a625afaf <unknown>
+#2 0x5645a6249209 <unknown>
+#3 0x5645a6281a79 <unknown>
+#4 0x5645a627d9d0 <unknown>
+#5 0x5645a6279d5a <unknown>
+#6 0x5645a62b4d3a <unknown>
+#7 0x5645a62aee63 <unknown>
+#8 0x5645a628482a <unknown>
+#9 0x5645a6285985 <unknown>
+#10 0x5645a65554cd <unknown>
+#11 0x5645a65595ec <unknown>
+#12 0x5645a653f71e <unknown>
+#13 0x5645a655a238 <unknown>
+#14 0x5645a6534870 <unknown>
+#15 0x5645a6576608 <unknown>
+#16 0x5645a6576788 <unknown>
+#17 0x5645a6590f1d <unknown>
+#18 0x7fa1c2dc2609 <unknown>
+
+	at com.example.FirstTest.homePage(FirstTest.java:19)
+]]></failure>
+    <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Starting ChromeDriver 102.0.5005.61 (0e59bcc00cc4985ce39ad31c150065f159d95ad3-refs/branch-heads/5005@{#819}) on port 2885
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+]]></system-err>
+  </testcase>
+</testsuite>

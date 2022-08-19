@@ -1,0 +1,3 @@
+# Created at 2022-08-18T14:36:58.614
+java.lang.NullPointerException: Cannot invoke "org.testng.xml.XmlSuite.getTests()" because "this.m_suite" is null
+

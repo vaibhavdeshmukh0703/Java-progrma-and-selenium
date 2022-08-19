@@ -13,8 +13,20 @@ public class AppTest
      * Rigorous Test :-)
      */
     @Test
-    public void shouldAnswerWithTrue()
-    {
-        assertTrue( true );
+    public boolean isEvenNumber(int number){
+         
+        boolean result = false;
+        if(number%2 == 0){
+            result = true;
+        }
+        return result;
     }
+     
+    @Test
+    public void evenNumberTest(){
+        AppTest asft = new AppTest();
+        assertTrue(asft.isEvenNumber(4));
+    }
+
+
 }

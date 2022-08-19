@@ -39,43 +39,40 @@ public class findBrokeLink {
       }
    }
 
-   public static void findBrokenLinks(){
-      try{
+   public static void findBrokenLinks() {
+      try {
 
-      List <WebElement> ancorTag = driver.findElements(By.tagName("a"));
-         List<String>  links = new ArrayList<String>();
-         for (WebElement  Tags : ancorTag) {
+         List<WebElement> ancorTag = driver.findElements(By.tagName("a"));
+         List<String> links = new ArrayList<String>();
+         for (WebElement Tags : ancorTag) {
             String url = Tags.getAttribute("http");
             links.add(url);
          }
 
-         //links.parallelStream().forEach(e-> checkLinks(e));
+         // links.parallelStream().forEach(e-> checkLinks(e));
 
-        for (WebElement webElement : ancorTag) {
-       if(webElement.getAttribute("href")==null ||  webElement.getAttribute("href").isEmpty()){
-          System.out.println("Url is empty");
-         //continue;
-       }
-       else{
-          String url = webElement.getAttribute("href");
-          
-         huc = (HttpURLConnection)(new URL(url).openConnection());
-         huc.connect();
-         int responceCode = huc.getResponseCode();
-         if(responceCode>=400){
-            System.out.println(url+"---->"+huc.getResponseMessage()+"is a broken Link");
+         for (WebElement webElement : ancorTag) {
+            if (webElement.getAttribute("href") == null || webElement.getAttribute("href").isEmpty()) {
+               System.out.println("Url is empty");
+               // continue;
+            } else {
+               String url = webElement.getAttribute("href");
+
+               huc = (HttpURLConnection) (new URL(url).openConnection());
+               huc.connect();
+               int responceCode = huc.getResponseCode();
+               if (responceCode >= 400) {
+                  System.out.println(url + "---->" + huc.getResponseMessage() + "is a broken Link");
+               } else {
+                  System.out.println("from ElseCode" + url + "-------->" + huc.getResponseMessage());
+               }
+            }
          }
-         else{
-            System.out.println("from ElseCode"+url+"-------->"+huc.getResponseMessage());
-         }
-       }
-    }
-        
-   }catch(Exception e){
-      System.out.println(e.getMessage());
-   }
- 
-     
+
+      } catch (Exception e) {
+         System.out.println(e.getMessage());
+      }
+
    }
 
    public static void checkLinks(String tag) {
