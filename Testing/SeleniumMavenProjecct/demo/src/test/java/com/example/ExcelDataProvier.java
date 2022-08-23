@@ -2,6 +2,7 @@ package com.example;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.util.Arrays;
 
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -13,14 +14,11 @@ public class ExcelDataProvier {
     @DataProvider(name = "dataSupplyer")
     public Object[][] dataSupplyer() {
         Object[][] object = null;
-        FileInputStream fis = null;
-        XSSFWorkbook xWorkbook = null;
-        File file = null;
         try {
-            file = new File("./Assets/Data.xlsx");
+            File file = new File("./Assets/Data.xlsx");
             System.out.println(file.exists());
-            fis = new FileInputStream(file);
-            xWorkbook = new XSSFWorkbook(fis);
+            FileInputStream fis = new FileInputStream(file);
+            XSSFWorkbook xWorkbook = new XSSFWorkbook(fis);
             XSSFSheet sheet = xWorkbook.getSheet("Sheet1");
             int sheetRows = sheet.getPhysicalNumberOfRows();// 4
             int coloum = sheet.getRow(0).getLastCellNum();// 3
@@ -34,9 +32,10 @@ public class ExcelDataProvier {
                     object[row][cell] = df.formatCellValue(sheet.getRow(row + 1).getCell(cell));
                 }
             }
+
             fis.close();
             xWorkbook.close();
-            return object;
+           
         } catch (Exception e) {
             // TODO: handle exception
             System.out.println(e.getMessage());
@@ -44,8 +43,20 @@ public class ExcelDataProvier {
 
         return object;
     }
+
     public static void main(String[] args) {
         ExcelDataProvier edp = new ExcelDataProvier();
-        edp.dataSupplyer();
+        Object[][] object = edp.dataSupplyer();
+        for (Object[] data : object) {
+            System.out.println(Arrays.toString(data) + " ");
+        }
+    }
+
+    @DataProvider(name = "twoDiamention")
+    public Object[][] twoDiamention() {
+        return new Object[][] {
+                { "vaibhav", "Deshmukh" },
+                { "Shekhar", "Deshmukh" }
+        };
     }
 }

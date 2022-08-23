@@ -1,8 +1,6 @@
 package String;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Set;
 
 public class CountDuplicateLettersInString {
@@ -26,7 +24,7 @@ public class CountDuplicateLettersInString {
         Set<Character> keys = hm.keySet();
         for (Character key : keys) {
             if(hm.get(key)!=0){
-                System.out.println(hm.get(key));
+                System.out.println(key+" ---> "+hm.get(key));
             }
             else{
             System.out.println("true");

@@ -6,6 +6,10 @@ package Interface;
 public interface Transaction {
 
     public void withdraw(int amount);
+
+default void msg(){System.out.println("default method");}  
+static int cube(int x){return x*x*x;};
+
 }
 
 /**
@@ -18,7 +22,7 @@ class InnerTransaction implements Transaction {
         // TODO Auto-generated method stub
         int balance = 1000;
         balance -= amount;
-        System.out.println("Aount Withdaw sucessfully and remaining baance is -> "+balance);
+        System.out.println("Amount is Withdaw sucessfully and remaining balance is -> "+balance);
 
     }
 
@@ -37,7 +41,12 @@ class TransactionFactory {
 public static void main(String[] args) {
     TransactionFactory tf = new TransactionFactory();
     Transaction tr = tf.createTransaction();
+    
     tr.withdraw(100);
+    tr.msg();
+
+    int cube = Transaction.cube(5);
+    System.out.println(cube);
 }
     
 }

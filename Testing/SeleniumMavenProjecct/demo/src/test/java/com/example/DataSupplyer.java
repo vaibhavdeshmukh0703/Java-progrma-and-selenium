@@ -14,7 +14,7 @@ public class DataSupplyer {
         return dp1.iterator();  
     }   
     
-    @DataProvider(indices = {1,2}, name="dp3")
+    @DataProvider(indices = {1,2}, name="dp3",parallel=true)
     public Iterator<Object[]> dataSupplier2(){
         List<Object[]> l2 = new ArrayList<>();
         l2.add(new Object[]{"Vaibhav",9657});

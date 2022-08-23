@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ListenerSuite">
+    <listeners>
+        <listener class-name="com.example.Listner.ImplimentationLisner"></listener>
+    </listeners>
+    <test name="ListenerTest1">
+        <classes>
+            <class name="com.example.Listner.ListenerTest">
+                <methods>
+                    <include name="TestMethod1"></include>
+                    <include name="TestMethod2"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="ListenerTest2">
+        <classes>
+            <class name="com.example.Listner.ListenerTest">
+                <methods>
+                    <include name="TestMethod3"></include>
+                    <include name="TestMethod4"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+
+<!-- <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test name="ClassTest">
+    <classes>
+        <class name="com.test.firstpackage.FirstClassInFirstPackage">
+            <methods>
+            <include name="firstTestCase"></include>
+            <include name="secondTestCase"></include>
+            <exclude name="thirdTestCase"></exclude>
+            </methods>
+        </class>           
+    </classes>
+  </test>
+</suite> -->

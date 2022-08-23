@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="screenShotSuite">
+    <parameter name="browserName" value="chrome" />
+    <listeners>
+        <listener class-name="com.example.ScreenShot.Implementation"></listener>
+    </listeners>
+    <test name="FacebookTest">
+        <classes>
+            <class name="com.example.ScreenShot.TestCase">
+                <methods>
+                    <include name="facebookTest"></include>
+                    <include name="googleSearchTest"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

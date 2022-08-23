@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 import com.example.Xpath_Starts_with;
 
+import org.apache.commons.math3.util.MultidimensionalCounter.Iterator;
 import org.bouncycastle.jcajce.provider.asymmetric.ElGamal;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -30,7 +31,8 @@ public class SelectCheckBox {
       List<WebElement> radioButtons = driver.findElements(By.xpath("//input[contains(@id, 'male')]"));
       for(WebElement radioButton : radioButtons){
          String radioButtonName = radioButton.getAttribute("id");
-         if(!radioButton.isSelected() && radioButton.isEnabled() && radioButtonName.equals("male")){
+         if(!radioButton.isSelected() && radioButton.isEnabled() && radioButtonName.equals("male"))
+         {
             radioButton.click();
          }
       }
@@ -47,6 +49,11 @@ public class SelectCheckBox {
       
          }
       }
+       java.util.Iterator<WebElement> it = checkboxs.iterator();
+      while(it.hasNext()){
+         String checkBoxName = it.next().getAttribute("id");
+         System.out.println(checkBoxName);
+      } 
 
    }
 }

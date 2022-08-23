@@ -4,14 +4,14 @@
 public class ReverseNumber {
 
     public static void main(String[] args) {
-        int number = 123;
+    //     int number = 010;
       
-    while(number > 0){
-        int lastNumber = number%10;
-        System.out.print(lastNumber);
-        number = number /10;
-    } 
-    reverseNumber(123);
+    // while(number > 0){
+    //     int lastNumber = number%10;
+    //     System.out.print(lastNumber);
+    //     number = number /10;
+    // } 
+    reverseNumber(010);
     }
     
  

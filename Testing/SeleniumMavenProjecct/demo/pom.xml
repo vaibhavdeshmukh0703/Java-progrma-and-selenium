@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.example</groupId>
@@ -11,7 +10,6 @@
   <name>demo</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
-
 
 
   <properties>
@@ -67,10 +65,19 @@
       <version>5.2.2</version>
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+    <dependency>
+      <groupId>com.aventstack</groupId>
+      <artifactId>extentreports</artifactId>
+      <version>5.0.9</version>
+    </dependency>
+
+
   </dependencies>
 
   <build>
-    <pluginManagement>      <!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+    <pluginManagement>
+      <!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
         <plugin>
@@ -80,7 +87,9 @@
           <configuration>
             <suiteXmlFiles>
               <suiteXmlFile>
-                            testng.xml
+                <!--  /home/vaibhav/Testing/Java program/Testing/SeleniumMavenProjecct/demo/src/test/java/com/example/parallel/parallel.xml-->
+                <!-- /home/vaibhav/Testing/Java program/Testing/SeleniumMavenProjecct/demo/src/test/java/com/example/Listner/Listener.xml -->
+                /home/vaibhav/Testing/Java program/Testing/SeleniumMavenProjecct/demo/src/test/java/com/example/ScreenShot/screenShot.xml
               </suiteXmlFile>
             </suiteXmlFiles>
           </configuration>
