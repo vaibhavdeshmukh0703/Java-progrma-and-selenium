@@ -12,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import freemarker.log.Logger;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class SelectCheckBox {
@@ -43,6 +44,7 @@ public class SelectCheckBox {
       
       for (WebElement element : checkboxs) {
          String checkBoxName = element.getAttribute("id");
+         
          //System.out.println(checkBoxName);
          if(checkBoxName.equalsIgnoreCase("Monday") || checkBoxName.equalsIgnoreCase("Sunday")){
             element.click();
