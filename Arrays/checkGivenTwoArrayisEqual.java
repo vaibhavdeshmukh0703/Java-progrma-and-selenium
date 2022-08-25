@@ -3,20 +3,18 @@ public class checkGivenTwoArrayisEqual {
 
     public static void checkIsEqual(String string) {
 
-        int firstIndexOfOpening = string.indexOf("{");
-        int firstIndexOfClosing = string.indexOf("}");
-        String spliteString = string.substring(firstIndexOfOpening + 1, firstIndexOfClosing).replace(",", "");
-        int[] array1 = new int[spliteString.length()];
-        for (int i = 0; i < spliteString.length(); i++) {
-            array1[i] = (Character.getNumericValue(spliteString.charAt(i)));
+        String[] spliteString = string.split("}");
+        String string1 = spliteString[0].replace("{", "").replaceAll(",", "");
+        String string2 = spliteString[1].replace("{", "").replaceAll(",", "");
+
+        int[] array1 = new int[string1.length()];
+        for (int i = 0; i < array1.length; i++) {
+            array1[i] = Character.getNumericValue(string1.charAt(i));
         }
 
-        int lastIndexOfOpenning = string.lastIndexOf("{");
-        int lastIndexOfClosing = string.lastIndexOf("}");
-        String spliteString2 = string.substring(lastIndexOfOpenning + 1, lastIndexOfClosing).replace(",", "");
-        int[] array2 = new int[spliteString2.length()];
-        for (int j = 0; j < array2.length; j++) {
-            array2[j] = (Character.getNumericValue(spliteString2.charAt(j)));
+        int[] array2 = new int[string2.length()];
+        for (int i = 0; i < array2.length; i++) {
+            array2[i] = Character.getNumericValue(string2.charAt(i));
         }
 
         if (array1.length != array2.length) {
@@ -45,6 +43,7 @@ public class checkGivenTwoArrayisEqual {
 
     public static void main(String[] args) {
         String string = "{2,3,1}{1,2,3}";
+
         checkIsEqual(string);
     }
 }
