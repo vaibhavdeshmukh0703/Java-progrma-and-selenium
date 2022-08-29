@@ -59,7 +59,7 @@ public class facebook {
     public static void TestCase() throws InterruptedException {
 
         try {
-
+        
             WebElement facebook_emaiWebElement = driver.findElement(By.id("email"));
             WebElement facebook_passwordWebElement = driver.findElement(By.id("pass"));
             WebElement facebook_submitButton = driver.findElement(By.xpath("//button[@type = 'submit']"));
@@ -67,10 +67,10 @@ public class facebook {
             Actions actions = new Actions(driver);
 
             // Action facebook_emailWebElementAction =
-            actions.moveToElement(facebook_emaiWebElement)
+            Actions emailActions = actions.moveToElement(facebook_emaiWebElement)
                     .click()
-                    .sendKeys(props.getProperty("emailId"))
-                    .perform();
+                    .sendKeys(props.getProperty("emailId"));
+            emailActions.build().perform();     
 
             Action facebook_passwordWebElementAction = actions.moveToElement(facebook_passwordWebElement)
                     .click()
