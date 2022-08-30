@@ -1,11 +1,12 @@
 package Arrays;
+
 import java.util.Arrays;
 
 public class SortArrayOfElement {
     public static void main(String[] args) {
         int tempVar, num;
         String numbersString;
-        int[] numbers = { 4, 11, 13, 12, 17, 35, 15, 7, 19, 3, 45 };
+        int[] numbers = { 4, 11, 13, 12, 17, 35, 11, 7, 12, 13, 45 };
 
         for (int i = 0; i < numbers.length; i++) {
             for (int j = i; j < numbers.length; j++) {
@@ -19,16 +20,27 @@ public class SortArrayOfElement {
             }
         }
 
-        numbersString = Arrays.toString(numbers);
+        int[] newArray = new int[numbers.length];
+        int count = 0;
+        for (int i = 0; i < numbers.length - 1; i++) {
+            if (numbers[i] != (numbers[i + 1])) {
 
-        System.out.println(numbersString);
+                newArray[count] = numbers[i];
+                count++;
+            }
+        }
+        for (int i : newArray) {
+            System.out.print(i + " ");
+        }
 
-        int intArr[] = { 10, 20, 15, 22, 35 };
+       // System.out.println(count);
 
-        // To sort the array using normal sort-
-        Arrays.sort(intArr);
+        // int intArr[] = { 10, 20, 15, 22, 35 };
 
-        System.out.println("Integer Array: "
-                + Arrays.toString(intArr));
+        // // To sort the array using normal sort-
+        // Arrays.sort(intArr);
+
+        // System.out.println("Integer Array: "
+        //         + Arrays.toString(intArr));
     }
 }
