@@ -28,8 +28,8 @@ public class UtilsMethod {
     public static void takeScreenShot(WebDriver driver, WebElement element, String targetFileName) {
         try {
             File src = null;
-            if (element == null) {
-                TakesScreenshot ts = (TakesScreenshot) driver;
+             TakesScreenshot ts = (TakesScreenshot) driver;
+            if (element == null) {   
                 src = ts.getScreenshotAs(OutputType.FILE);
             } else {
                 src = element.getScreenshotAs(OutputType.FILE);

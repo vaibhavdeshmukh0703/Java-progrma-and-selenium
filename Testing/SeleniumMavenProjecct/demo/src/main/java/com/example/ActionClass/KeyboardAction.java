@@ -56,7 +56,7 @@ private static void keyBoardActionsMethod(WebDriver driver) {
         //Ctrl + A
         Action selectText = actions.keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).build();
         selectText.perform();
-
+       
         // Ctrl + C
        Action copyText =  actions.keyDown(Keys.CONTROL).sendKeys("c").keyUp(Keys.CONTROL).build();
        copyText.perform();

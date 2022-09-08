@@ -23,15 +23,27 @@ public class Iframe {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
-
-        // Handle iframe
+        // Handle first iframe
         driver.switchTo().frame("packageListFrame");
-        WebElement link = driver.findElement(By.xpath("//a[text()='org.openqa.selenium']"));
+        WebElement link = driver.findElement(By.linkText("org.openqa.selenium"));
         link.click();
         driver.switchTo().defaultContent();
 
-        //for get data from parent frame and your are in child frame 
-        //So how can you getBack to parent window
+        // Handle Second Iframe
+        driver.switchTo().frame("packageFrame");
+        WebElement link1 = driver.findElement(By.xpath("//span[text()='Alert']"));
+        link1.click();
+        driver.switchTo().defaultContent();
+
+        // handle thierd frame
+
+        driver.switchTo().frame("classFrame");
+        WebElement link3 = driver.findElement(By.xpath("//a[text()='Overview']"));
+        link3.click();
+        driver.switchTo().defaultContent();
+
+        // for get data from parent frame and your are in child frame
+        // So how can you getBack to parent window
 
         driver.switchTo().parentFrame();
     }

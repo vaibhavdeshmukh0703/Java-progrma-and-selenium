@@ -1,5 +1,3 @@
-import com.AbstractClass.AbstractClass;
-
 /**
  * AbstractClass
  */
@@ -28,9 +26,9 @@ class InnerAbstractClass extends AbstractClass {
         System.out.println("overrided run from abstractclass"+AbstractClass.a++);
     }
     
-    // public void Test(){
-    //     System.out.println("From Overided Test method");
-    // }
+    public static void test1(){
+        System.out.println("From Overided Test method");
+    }
 }
 
 class AbstractClassFactory {
@@ -43,9 +41,13 @@ class Access {
     public static void main(String[] args) {
         AbstractClassFactory acb = new AbstractClassFactory();
         AbstractClass ac = acb.getFactory();
-        ac.Test();
+        InnerAbstractClass ab = new InnerAbstractClass();
+        ab.test1();
         ac.test1();
-        ac.run();
-        System.out.println(ac.a);
+        ab.run();
+        // ac.Test();
+        // ac.test1();
+        // ac.run();
+        // System.out.println(ac.a);
     }
 }

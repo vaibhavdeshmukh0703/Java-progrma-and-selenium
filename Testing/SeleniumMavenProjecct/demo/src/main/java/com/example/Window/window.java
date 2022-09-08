@@ -20,17 +20,27 @@ public class window {
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             driver.manage().window().maximize();
 
+            String title = driver.getTitle();
+            //String windowId = driver.getWindowHandle();
+
+            //System.out.println(title + " " + windowId);
+
             WebElement DemoSiteElement = driver.findElement(By.id("tabButton"));
             DemoSiteElement.click();
 
-            Set<String> windowId = driver.getWindowHandles();
-            for (String ids : windowId) {
-                System.out.println("Windows Id is --->" + ids);
+            Set<String> windowIds = driver.getWindowHandles();
+            for (String ids : windowIds) {
+                String title1 = driver.switchTo().window(ids).getTitle();
+                System.out.println(title1 + " " + ids);
+                if (title.equals(title1)) {
+                    System.out.println("from Inside-->" + title + "  " + ids);
+                    driver.switchTo().window(ids);
+                }
             }
 
         } catch (Exception e) {
             // TODO: handle exception
-            System.out.println(e.getMessage());
+          e.printStackTrace();
         }
     }
 }

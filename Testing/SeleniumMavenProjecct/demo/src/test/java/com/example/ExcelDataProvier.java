@@ -21,15 +21,16 @@ public class ExcelDataProvier {
             XSSFWorkbook xWorkbook = new XSSFWorkbook(fis);
             XSSFSheet sheet = xWorkbook.getSheet("Sheet1");
             int sheetRows = sheet.getPhysicalNumberOfRows();// 4
+            System.out.println("SheetRow-->"+sheetRows);
             int coloum = sheet.getRow(0).getLastCellNum();// 3
 
             object = new Object[sheetRows - 1][coloum];
             System.out.println(object.length);
 
-            for (int row = 0; row < sheetRows - 1; row++) {
+            for (int row = 0; row < sheetRows-1; row++) {
                 for (int cell = 0; cell < coloum; cell++) {
                     DataFormatter df = new DataFormatter();
-                    object[row][cell] = df.formatCellValue(sheet.getRow(row + 1).getCell(cell));
+                    object[row][cell] = df.formatCellValue(sheet.getRow(row+1).getCell(cell));
                 }
             }
 

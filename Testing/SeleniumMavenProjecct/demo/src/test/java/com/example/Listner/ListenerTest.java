@@ -5,7 +5,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 // At class Level Listener Implementation
-//@Listeners(ImplimentationLisner.class)
+@Listeners(ImplimentationLisner.class)
 public class ListenerTest {
     @Test
     public void TestMethod1(){

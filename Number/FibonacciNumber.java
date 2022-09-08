@@ -15,7 +15,7 @@ public class FibonacciNumber {
     }
 
     public static void main(String[] args) {
-        int number = fibonacci(5);
+        int number = fibonacci(6);
         System.out.println(number);
 
         System.out.println(additionOfPrimeNumber(5));

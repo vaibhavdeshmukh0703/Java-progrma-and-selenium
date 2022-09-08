@@ -76,7 +76,7 @@ import org.testng.annotations.Test;
 
     // ----------------------------Data Provider from DataProvider
     // Class-----------------
-    @Test(dataProvider = "dataSupplyer", dataProviderClass = ExcelDataProvier.class)
+    @Test(dataProvider = "dp3", dataProviderClass = DataSupplyer.class)
     public void login1(Object[] object) {
         System.out.println(object[0]+ " "+object[1]);
     }

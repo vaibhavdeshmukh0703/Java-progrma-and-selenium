@@ -8,7 +8,7 @@ class CheckGivenStringHasSpecialSymbol {
     public static boolean stringHaveSpecialSymbol(String input) {
         char[] charArrayOfInputString = input.toCharArray();
         for (int index = 0; index < charArrayOfInputString.length; index++) {
-            if (!Character.isLetterOrDigit(charArrayOfInputString[index])) {
+            if (!Character.isLetter(charArrayOfInputString[index])) {
                 return true;
             }
         }
