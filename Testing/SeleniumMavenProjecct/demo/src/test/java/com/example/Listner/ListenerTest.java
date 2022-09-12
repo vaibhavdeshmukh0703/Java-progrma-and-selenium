@@ -15,7 +15,7 @@ public class ListenerTest {
     public void TestMethod2() throws InterruptedException{
        
         System.out.println("From Test Method 2");
-        Assert.assertTrue(false); 
+     Assert.assertTrue(false); 
     }
      @Test(timeOut = 1000)
     public void TestMethod3() throws InterruptedException{

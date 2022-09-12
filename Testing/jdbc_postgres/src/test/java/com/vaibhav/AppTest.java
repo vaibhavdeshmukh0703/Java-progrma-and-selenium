@@ -76,20 +76,48 @@ public class AppTest {
 
             Response response = httpRequest.request(Method.POST, "/signup");
 
-            String responseData = response.asString();
-            System.out.println(responseData);
-
-            // int responseCode = response.getStatusCode();
-            // assertEquals(201, responseCode);
+            int responseCode = response.getStatusCode();
+            if (responseCode == 200) {
+                Assert.assertEquals(200, responseCode);
+            } else if (responseCode == 201) {
+                Assert.assertEquals(201, responseCode);
+            } else {
+                Assert.assertFalse(true);
+            }
 
             JsonPath result = response.jsonPath();
             String message = result.get("message");
+            System.out.println(message);
             Assert.assertEquals(message, "Vendor is All ready Registered");
 
         } catch (Exception e) {
             // TODO: handle exception
             System.out.println("This Msg from  method catch body" + e.getMessage());
             e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void getMethod() {
+        try {
+            // base URL
+            RestAssured.baseURI = "https://jsonplaceholder.typicode.com";
+            RequestSpecification httpRequest = RestAssured.given();
+
+            Response response = httpRequest.request(Method.GET, "/posts/1");
+            System.out.println(response);
+            int StatusCode = response.getStatusCode();
+            // JsonPath result = response.jsonPath();
+            // String message = result.get("userId");
+            System.out.println(StatusCode);
+            // System.out.println(response.getBody().asString());
+            // System.out.println(userId);
+            // Assert.assertEquals(userId, 1);
+            // System.out.println("before assert");
+            // Assert.assertEquals(StatusCode, 200);
+            // System.out.println("after assert");
+        } catch (Exception e) {
+            // TODO: handle exception
         }
     }
 }
