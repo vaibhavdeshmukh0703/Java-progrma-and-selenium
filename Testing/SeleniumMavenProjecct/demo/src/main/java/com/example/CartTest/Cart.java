@@ -130,16 +130,44 @@ public class Cart {
 
             ww.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table")));
 
-            List<WebElement> tableData = driver.findElements(By.xpath("//table//tbody//tr"));
+            List<WebElement> columnData = driver.findElements(By.xpath("//table//thead//tr//th"));
+            int columns = columnData.size();
 
-            for (WebElement element : tableData) {
-                System.out.println(element.getText());
+            List<WebElement> rowsData = driver.findElements(By.xpath("//table//tbody//tr"));
+            int rows = rowsData.size();
+
+            int totalAmount = 0;
+            for (int row = 1; row <= rows; row++) {
+                for (int column = 2; column <= columns - 1; column++) {
+                    String data = driver.findElement(By.xpath("//table//tbody//tr[" + row + "]//td[" + column + "]"))
+                            .getText();
+                    System.out.print(data + " ");
+                    if (column == 3) {
+                        totalAmount = totalAmount + Integer.parseInt(data);
+                    }
+                }
+                System.out.println();
             }
+            System.out.println("total amount ->" + totalAmount);
+
+            Thread.sleep(2000);
+
+            // Check the given total are same or not
+            WebElement total = driver.findElement(By.id("totalp"));
+            int systemTotalAmount = Integer.parseInt(total.getText());
+            if (totalAmount == systemTotalAmount) {
+                System.out.println("Calculated Amount is Correct");
+            } else {
+                System.out.println("Invalid Amount");
+            }
+            // System.out.println(" Total Amount is --->"+totalAmount+ " Actual Total amount
+            // -->"+actualTotal);
 
             WebElement placeOrder = driver.findElement(By.xpath("//button[text()='Place Order']"));
             placeOrder.click();
 
-            // ----------------Operation Place Order---------------------------------------
+            // ----------------Operation Place
+            // Order-----totalp----------------------------------
 
             driver.switchTo().activeElement();
 
@@ -165,7 +193,7 @@ public class Cart {
             String script = " return document.getElementsByClassName('lead text-muted').item(0).getInnerHTML()";
             String data = (String) js.executeScript(script);
 
-            System.out.println(data);
+            // System.out.println(data);
             String[] spliteResult = data.split("<br>");
             System.out.println("Order ID Is -- " + spliteResult[0] + " And Order Amount is --" + spliteResult[1]);
 
