@@ -14,9 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-/**
- * Cart
- */
+
 public class Cart {
     private static WebDriver driver = null;
 
@@ -29,12 +27,27 @@ public class Cart {
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
+            loginToDemoBlaze();
             moveToCart();
         } catch (Exception e) {
             e.printStackTrace();
             // TODO: handle exception
         }
 
+    }
+
+    private static void loginToDemoBlaze() {
+        try {
+            selectElementByLinkText("Log in");
+            driver.switchTo().activeElement();
+
+            sendKeysData("loginusername", "sctqaautomation@grr.la");
+            sendKeysData("loginpassword", "Spring@123");
+            selectElementByXpath("//button[text()='Log in']");
+
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
     }
 
     public static void selectElementByLinkText(String link) {
@@ -67,14 +80,28 @@ public class Cart {
         }
     }
 
+    public static void selectElementByXpath(String xpath) {
+        try {
+            WebElement element = driver.findElement(By.xpath(xpath));
+            element.click();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void moveToCart() {
         try {
 
+            WebDriverWait ww = new WebDriverWait(driver, 3);
+           
+            driver.navigate().refresh();
+            selectElementByXpath("//a[text()='Home ']");
+            selectElementByLinkText("Phones");
+
             selectElementByLinkText("Samsung galaxy s6");
 
-            WebDriverWait ww = new WebDriverWait(driver, 3);
+          
             ww.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Add to cart")));
-
             selectElementByLinkText("Add to cart");
 
             // Handle Alert--->
@@ -84,7 +111,8 @@ public class Cart {
 
             // Back To HOme Page
 
-            selectElementById("nava");
+             driver.navigate().refresh();
+             selectElementByXpath("//a[text()='Home ']");
 
             // -------------------------------Code For Laptop
             // Section--------------------------
@@ -101,8 +129,8 @@ public class Cart {
             alert.dismiss();
 
             // Back To HOme Page
-
-            selectElementById("nava");
+            driver.navigate().refresh();
+             selectElementByXpath("//a[text()='Home ']");
 
             // ----------------------------------For Web Element MOnitor_----------->
 
@@ -121,8 +149,6 @@ public class Cart {
             alert.dismiss();
 
             // Back To HOme Page
-
-            selectElementById("nava");
 
             // ---------------------------------- Operation Cart--------------------------
 
@@ -150,7 +176,7 @@ public class Cart {
             }
             System.out.println("total amount ->" + totalAmount);
 
-            Thread.sleep(2000);
+            Thread.sleep(3000);
 
             // Check the given total are same or not
             WebElement total = driver.findElement(By.id("totalp"));
@@ -171,7 +197,7 @@ public class Cart {
 
             driver.switchTo().activeElement();
 
-            sendKeysData("name", "vaibhav");
+            sendKeysData("name", "chetan");
 
             sendKeysData("country", "India");
 

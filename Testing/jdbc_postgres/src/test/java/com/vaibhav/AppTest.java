@@ -34,7 +34,7 @@ public class AppTest {
             // create request object
             RequestSpecification httpGetRequest = RestAssured.given();
 
-            // create responce object
+            // create responce object and apply request over server
             Response response = httpGetRequest.request(Method.GET, "/1");
 
             // responce validation
@@ -118,6 +118,38 @@ public class AppTest {
             // System.out.println("after assert");
         } catch (Exception e) {
             // TODO: handle exception
+        }
+    }
+
+    @Test
+    public void employeePOJO() {
+        try {
+
+            RestAssured.baseURI = "https://reqres.in";
+            RequestSpecification httpRequestObject = RestAssured.given();
+
+            EmployeePojo ep = new EmployeePojo("vaibhav", "Developer", new String[] { "Java", "JavaScript" }, "vaibhav",
+                    "vaibhav@gmail.com");
+
+            httpRequestObject.header("Content-Type", "application/json; charset=UTF-8");
+
+            httpRequestObject.body(ep);
+
+            Response response = httpRequestObject.request(Method.POST, "/api/users");
+
+            int statusCode = response.getStatusCode();
+            String statusLine = response.getStatusLine();
+            
+            System.out.println(statusCode + "  " + statusLine);
+            System.out.println(response.asString());
+
+            JsonPath jsonPath = response.jsonPath();
+            System.out.println(jsonPath.get("name"));
+
+            //Assert.assertEquals(response.getBody().path("name"), "vaibhav");
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }
